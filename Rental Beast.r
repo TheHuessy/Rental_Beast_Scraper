@@ -176,15 +176,5 @@ for(i in 1:length(zips)){
 #Make sure there aren't any obvious duplicates
 rbd <- unique(rbd)
 
-
-
-#Loading in database (going to probably want to change this to a simple apend statement in SQL)
-#curs <- read_civis("sandbox.rental_beast_master", database="City of Boston")
-
 write_civis(rbd, tablename = "sandbox.rental_beast_master", if_exists = "append")
-
-#nrbd <- rbind(curs,rbd)
-#nrbd <- unique(nrbd)
-#write.csv(nrbd, "/home/james/Documents/Rental Beast/Rental_Beast.csv", row.names = FALSE)
-
 
