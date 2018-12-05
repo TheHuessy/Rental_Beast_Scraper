@@ -176,5 +176,8 @@ for(i in 1:length(zips)){
 #Make sure there aren't any obvious duplicates
 rbd <- unique(rbd)
 
+#Write to main table
 write_civis(rbd, tablename = "sandbox.rental_beast_master", if_exists = "append")
 
+#Write to daily table
+write_civis(rbd, tablename = "sandbox.rental_beast_daily", if_exists = "append")
