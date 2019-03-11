@@ -180,4 +180,4 @@ rbd <- unique(rbd)
 write_civis(rbd, tablename = "sandbox.rental_beast_master", database = "Boston", if_exists = "append")
 
 #Write to daily table
-write_civis(rbd, tablename = "sandbox.rental_beast_daily", database = "Boston" if_exists = "drop")
+write_civis(rbd, tablename = "sandbox.rental_beast_daily", database = "Boston", if_exists = "drop")
