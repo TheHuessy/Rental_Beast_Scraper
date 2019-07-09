@@ -201,4 +201,6 @@ rbd <- unique(rbd)
 write_civis(rbd, tablename = "sandbox.rental_beast_master", database = "Boston", if_exists = "append")
 
 #Write to daily table
-write_civis(rbd, tablename = "sandbox.rental_beast_daily", database = "Boston", if_exists = "append")
+# Getting rid of this part because of ownership problems on civis. 
+# Since it's populating into the master table and since these are all still in sandbox, it seems like don't have to worry.
+#write_civis(rbd, tablename = "sandbox.rental_beast_daily", database = "Boston", if_exists = "append")
