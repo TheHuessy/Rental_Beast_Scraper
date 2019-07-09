@@ -36,7 +36,7 @@ rbd <- data.frame("brokerage_name" = as.character(),
                   "exclusive_by" = as.character(),
                   "mls_id" = as.numeric(),
                   "status" = as.character(),
-                  "hide_rb_cp" = as.character(),
+                  "hide_rb_cp" = as.numeric(),
                   "hide_partner_cp" = as.character(),
                   "is_featured" = as.character(),
                   "match_type" = as.character(),
@@ -163,6 +163,27 @@ for(i in 1:length(zips)){
                      "match_type" = rtu$data$match_type,
                      "Scrape_Date" = Sys.time()
   )
+  
+    
+  #hide_rb_cp
+  for (trr in 1:length(glsx$hide_rb_cp)){
+    if (glsx$hide_rb_cp[trr] == FALSE){
+      glsx$hide_rb_cp[trr] <- 0
+    } else if (glsx$hide_rb_cp[trr] == TRUE){
+      glsx$hide_rb_cp[trr] <- 1
+    }
+  }
+  
+  #hide_partner_cp
+  for (trr in 1:length(glsx$hide_partner_cp)){
+    if (glsx$hide_partner_cp[trr] == FALSE){
+      glsx$hide_partner_cp[trr] <- 0
+    } else if (glsx$hide_partner_cp[trr] == TRUE){
+      glsx$hide_partner_cp[trr] <- 1
+    }
+  }
+  
+  
   
   #Adding new dataframe row to "master" dataframe  
   
